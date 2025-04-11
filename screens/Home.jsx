@@ -1,19 +1,18 @@
 import { FlatList, View, Text, Image, ScrollView } from "react-native";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { globalStyle } from "../imports/imports";
-import RopaDeportiva from "../data/ropaDeportiva";
 import { CardOffer, CardRopa } from "../imports/imports";
 import Contexto from "../context/Contexto";
 
 export default function Home() {
+  const { listOffers, RopaDeportiva, toggleLike } = useContext(Contexto);
+
   const tops = RopaDeportiva.filter((item) => item.category === "Tops");
   const leggings = RopaDeportiva.filter((item) => item.category === "Leggings");
   const conjunto = RopaDeportiva.filter(
     (item) => item.category === "Conjuntos"
   );
-
-  const { listOffers } = useContext(Contexto);
 
   return (
     <SafeAreaView>
@@ -46,7 +45,7 @@ export default function Home() {
         />
         {/* CARD LEGGINGS */}
         <View style={globalStyle.textConten}>
-          <Text style={globalStyle.textTitle}>Tops and Bras Collection</Text>
+          <Text style={globalStyle.textTitle}>Leggings Collection</Text>
           <Text style={globalStyle.textSubTitle}>Show all</Text>
         </View>
         <FlatList
@@ -64,7 +63,7 @@ export default function Home() {
         />
         {/* CARD CONJUNTO */}
         <View style={globalStyle.textConten}>
-          <Text style={globalStyle.textTitle}>Tops and Bras Collection</Text>
+          <Text style={globalStyle.textTitle}>ActiveWear Collection</Text>
           <Text style={globalStyle.textSubTitle}>Show all</Text>
         </View>
         <FlatList

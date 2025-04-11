@@ -58,7 +58,7 @@ const globalStyles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     // paddingHorizontal: 4,
-    marginVertical: 12,
+    marginVertical: 8,
     marginHorizontal: 8,
     alignItems: "center",
   },
